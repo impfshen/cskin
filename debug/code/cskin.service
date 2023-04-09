@@ -1,0 +1,14 @@
+[Unit]
+Description=CSkin Firmware
+Wants=usbmuxd.service
+After=usbmuxd.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+WorkingDirectory=/home/cskin/cskin-firmware/cskin
+ExecStart=/usr/bin/python2 main.py > error.log
+
+[Install]
+WantedBy=multi-user.target
